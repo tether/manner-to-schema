@@ -15,7 +15,8 @@ test('should generate default schema from single and simple endpoint', assert =>
     get: {
       '/': {
         query: {},
-        body: {}
+        body: {},
+        middleware: []
       }
     }
   })
@@ -32,13 +33,15 @@ test('should generate default schema from multiple single endpoints', assert => 
     get: {
       '/': {
         query: {},
-        body: {}
+        body: {},
+        middleware: []
       }
     },
     post: {
       '/': {
         query: {},
-        body: {}
+        body: {},
+        middleware: []
       }
     }
   })
@@ -57,7 +60,8 @@ test('should generate schema with the right path', assert => {
     get: {
       '/:name': {
         query: {},
-        body: {}
+        body: {},
+        middleware: []
       }
     }
   })
@@ -75,11 +79,13 @@ test('should generate schema from multiple endpoint paths', assert => {
     get: {
       '/': {
         query: {},
-        body: {}  
+        body: {},
+        middleware: []
       },
       '/:name': {
         query: {},
-        body: {}
+        body: {},
+        middleware: []
       }
     }
   })
@@ -97,7 +103,8 @@ test('should not generate schema for paths alias', assert => {
     get: {
       '/:name': {
         query: {},
-        body: {}
+        body: {},
+        middleware: []
       }
     }
   })

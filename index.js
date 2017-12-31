@@ -49,6 +49,7 @@ function path (obj) {
 function parameters () {
   return {
     query: {},
-    body: {}
+    body: {},
+    middleware: []
   }
 }
