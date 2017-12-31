@@ -19,7 +19,6 @@ test('should generate default schema from single and simple endpoint', assert =>
       }
     }
   })
-
 })
 
 
@@ -43,5 +42,21 @@ test('should generate default schema from multiple simple endpoints', assert => 
       }
     }
   })
+})
 
+test('should generate schema with the right path', assert => {
+  assert.plan(1)
+  const obj = schema({
+    get: {
+      '/:name': () => {}
+    }
+  })
+  assert.deepEqual(obj, {
+    get: {
+      '/:name': {
+        query: {},
+        body: {}
+      }
+    }
+  })
 })
