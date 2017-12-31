@@ -1,0 +1,28 @@
+{
+  "name": "manner-to-schema",
+  "version": "1.0.0",
+  "description": "Generate default schema from manner service",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tether/manner-to-schema.git"
+  },
+  "keywords": [
+    "manner",
+    "schema",
+    "api",
+    "rest"
+  ],
+  "author": "Olivier Wietrich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tether/manner-to-schema/issues"
+  },
+  "homepage": "https://github.com/tether/manner-to-schema#readme",
+  "devDependencies": {
+    "tape": "*"
+  }
+}
