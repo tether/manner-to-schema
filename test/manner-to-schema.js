@@ -1,13 +1,23 @@
-
 /**
  * Test dependencies.
  */
 
 const test = require('tape')
+const schema = require('..')
 
-test('this is an example', assert => {
+
+test('should generate default schema from basic endpoint', assert => {
   assert.plan(1)
-  assert.equal(1 + 2, 3)
-})
+  const obj = schema({
+    get() {}
+  })
+  assert.deepEqual(obj, {
+    get: {
+      '/': {
+        query: {},
+        body: {}
+      }
+    }
+  })
 
-  
+})
