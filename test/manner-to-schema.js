@@ -60,3 +60,21 @@ test('should generate schema with the right path', assert => {
     }
   })
 })
+
+test('should not generate schema for paths alias', assert => {
+  assert.plan(1)
+  const obj = schema({
+    get: {
+      '/hello': '/world',
+      '/:name': () => {}
+    }
+  })
+  assert.deepEqual(obj, {
+    get: {
+      '/:name': {
+        query: {},
+        body: {}
+      }
+    }
+  })
+})
