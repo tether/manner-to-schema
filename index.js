@@ -7,5 +7,14 @@
  */
 
 module.exports = function (service) {
-  // do something
+  const schema = {}
+  Object.keys(service).map(method => {
+    schema[method] = {
+      '/': {
+        query: {},
+        body: {}
+      }
+    }
+  })
+  return schema
 }
