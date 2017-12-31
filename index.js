@@ -9,11 +9,23 @@
 module.exports = function (service) {
   const schema = {}
   Object.keys(service).map(method => {
-    schema[method] = {
-      '/': {
-        query: {},
-        body: {}
+    const type = typeof service[method]
+    if (type === 'function') {
+      schema[method] = {
+        '/': {
+          query: {},
+          body: {}
+        }
       }
+    } else {
+      Object.keys(service[method]).map(path => {
+        schema[method] = {
+          [path]: {
+            query: {},
+            body: {}
+          }
+        }
+      })
     }
   })
   return schema
