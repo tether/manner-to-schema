@@ -1,6 +1,6 @@
 {
   "name": "manner-to-schema",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate default schema from manner service",
   "main": "index.js",
   "scripts": {
